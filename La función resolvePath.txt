@@ -1,0 +1,30 @@
+La función resolvePath
+
+Paso 1: Valida que no haya un path vacío
+Paso 2: Crea una copia del path ¿porqué? porque el path después se modifica
+
+/docs/reports       docs\0reportes\0  y obviamente no queremos modificar el path original
+
+Paso 3: Se maneja caso especial "/"   cd /  (que lo envía a la raíz)
+Paso 4: Elige el punto inicio
+
+Path absoluto  /docs/reportes   el path empieza con current=root
+Path relativo  reportes         el path empieza con el current=current_directory
+
+Paso 5: Separo componentes (strtok) -> tokens
+
+/docs/reportes/2025
+
+docs
+reportes
+2025
+
+Paso6: Procesa cada token
+
+./archivo.txt    ¿Qué significa .? ¿Qué significa ..?  Cada token normal (docs) cd archivo.txt
+
+Paso 7: Verifica que estoy en un directorio
+Paso 8: Verifico permiso de lectura (si no hay permiso, el comando no esta permitido)
+Paso 9: Busco hijo
+Paso 10: Valido si el hijo que me pidieron existe
+Paso 11: Se procesaron los tokens se imprimió
