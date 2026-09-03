@@ -140,17 +140,10 @@ Aunque exista una responsabilidad inicial, ambos estudiantes deberán conocer el
 SistemaMonitoreo
 ```
 
-2. Crear un repositorio en GitHub llamado:
+2. Compartir proyecto de IntelliJ IDEA en GitHub:
 
-```text
-sistema-monitoreo-java
-```
-
-3. Vincular IntelliJ IDEA con GitHub.
-  
-4. Agregar un archivo `.gitignore`.
-  
-5. Crear la estructura inicial:
+ 
+3. Crear la estructura inicial:
   
 
 ```text
@@ -164,7 +157,7 @@ sistema-monitoreo-java/
 └── README.md
 ```
 
-6. El archivo:
+4. El archivo:
 
 ```text
 docs/01-analisis-diseno.md
@@ -172,7 +165,7 @@ docs/01-analisis-diseno.md
 
 será el documento de trabajo obligatorio para las fases 1, 2 y 3.
 
-7. Crear una clase principal mínima que permita verificar que el proyecto funciona.
+5. Crear una clase principal mínima que permita verificar que el proyecto funciona.
 
 Por ejemplo:
 
@@ -184,15 +177,15 @@ public class Main {
 }
 ```
 
-8. Realizar el primer commit:
+6. Realizar el primer commit:
 
 ```text
 Inicializa proyecto y documento de análisis
 ```
 
-9. Ejecutar `push`.
+7. Ejecutar `push`.
   
-10. Agregar como colaborador al estudiante B.
+8. Agregar como colaborador al estudiante B.
   
 
 ---
