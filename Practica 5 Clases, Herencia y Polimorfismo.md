@@ -111,21 +111,284 @@ Las mediciones serán simuladas desde el programa.
 
 # Desarrollo de la práctica
 
-# Fase 1. Creación del repositorio y análisis orientado a objetos
+# Fase 1. Creación del proyecto, repositorio y análisis orientado a objetos
 
-En esta fase crearás el proyecto y comenzarás el documento que utilizarás para registrar tu proceso de análisis y diseño.
+En esta fase prepararás tu espacio de trabajo y comenzarás el análisis del problema.
 
-## 1. Creación del proyecto
+Primero crearás el proyecto Java en **IntelliJ IDEA**, después crearás un repositorio vacío en **GitHub desde el navegador** y finalmente vincularás ambos para poder registrar y publicar el avance de tu trabajo.
 
-Crea en IntelliJ IDEA un proyecto Java llamado:
+Una vez preparado el repositorio, comenzarás el análisis del sistema de invernadero inteligente.
+
+---
+
+## 1. Crea el proyecto en IntelliJ IDEA
+
+Abre **IntelliJ IDEA** y crea un nuevo proyecto Java llamado:
 
 ```text
 SistemaInvernadero
 ```
 
-Crea un repositorio en GitHub y publica el proyecto.
+Crea una clase principal `Main` con un programa mínimo que permita comprobar que el proyecto funciona:
 
-La estructura inicial deberá ser semejante a:
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Sistema de invernadero inteligente");
+    }
+
+}
+```
+
+Ejecuta el programa.
+
+Antes de continuar, comprueba que aparezca:
+
+```text
+Sistema de invernadero inteligente
+```
+
+y que no existan errores de compilación.
+
+---
+
+## 2. Activa Git en tu proyecto
+
+Todavía en **IntelliJ IDEA**, activa el control de versiones Git para tu proyecto.
+
+Utiliza:
+
+```text
+VCS
+   ↓
+Enable Version Control Integration
+   ↓
+Git
+```
+
+A partir de este momento tendrás un **repositorio Git local** asociado con la carpeta de tu proyecto.
+
+> **Importante:** esto todavía no significa que tu proyecto se encuentre en GitHub.  
+> Por ahora solamente has creado el repositorio Git en tu computadora.
+
+---
+
+## 3. Realiza tu primer commit
+
+Ahora registrarás la primera versión de tu proyecto.
+
+Desde IntelliJ IDEA abre la ventana de **Commit**.
+
+Selecciona los archivos correspondientes al proyecto y utiliza como mensaje:
+
+```text
+Inicializa proyecto Java
+```
+
+Realiza el `commit`.
+
+Recuerda:
+
+```text
+COMMIT
+   ↓
+registra una versión de tu trabajo
+en el repositorio Git local
+```
+
+Todavía no has enviado nada a GitHub.
+
+---
+
+## 4. Crea el repositorio en GitHub
+
+Ahora abre **GitHub desde tu navegador web**.
+
+En tu cuenta de GitHub crea un nuevo repositorio llamado:
+
+```text
+sistema-invernadero-java
+```
+
+Configúralo como repositorio **público**.
+
+### Importante
+
+Crea el repositorio **vacío**.
+
+En este momento no agregues desde GitHub:
+
+- `README`;
+- `.gitignore`;
+- licencia.
+
+Estos archivos podrán formar parte posteriormente de tu proyecto local.
+
+> En este paso estás creando el repositorio directamente desde la página web de GitHub, **no desde IntelliJ IDEA**.
+
+Al terminar, GitHub mostrará la dirección de tu nuevo repositorio.
+
+Tendrá una forma semejante a:
+
+```text
+https://github.com/TU-USUARIO/sistema-invernadero-java.git
+```
+
+Copia esa dirección.
+
+---
+
+## 5. Vincula IntelliJ IDEA con el repositorio de GitHub
+
+Regresa a **IntelliJ IDEA**.
+
+Ahora conectarás el repositorio Git que existe en tu computadora con el repositorio que acabas de crear en GitHub.
+
+Selecciona:
+
+```text
+Git
+   ↓
+Manage Remotes...
+```
+
+Presiona:
+
+```text
++
+```
+
+Agrega el repositorio remoto utilizando:
+
+```text
+Name: origin
+
+URL:
+https://github.com/TU-USUARIO/sistema-invernadero-java.git
+```
+
+Presiona **OK**.
+
+Con esto has establecido la relación:
+
+```text
+Proyecto en IntelliJ IDEA
+          │
+          ▼
+Repositorio Git local
+          │
+          │ origin
+          ▼
+Repositorio en GitHub
+```
+
+El nombre:
+
+```text
+origin
+```
+
+será utilizado para identificar el repositorio remoto de GitHub asociado con tu proyecto.
+
+---
+
+## 6. Envía tu proyecto a GitHub
+
+Hasta este momento tienes:
+
+```text
+Proyecto Java
+     ↓
+Repositorio Git local
+     ↓
+commit
+```
+
+pero todavía necesitas enviar ese historial al repositorio remoto.
+
+En IntelliJ IDEA selecciona:
+
+```text
+Git
+   ↓
+Push...
+```
+
+Revisa la información que aparece y realiza el `push`.
+
+Puedes recordar la diferencia de esta manera:
+
+```text
+COMMIT
+   ↓
+registra cambios en tu repositorio local
+
+PUSH
+   ↓
+envía tus commits al repositorio remoto
+en GitHub
+```
+
+---
+
+## 7. Comprueba el repositorio desde GitHub
+
+Regresa a **GitHub desde el navegador** y actualiza la página del repositorio.
+
+Comprueba que puedas observar los archivos de tu proyecto.
+
+También deberás poder observar el commit:
+
+```text
+Inicializa proyecto Java
+```
+
+> **Antes de continuar:** si los archivos existen en IntelliJ IDEA pero no aparecen en GitHub, verifica que hayas realizado tanto el `commit` como el `push`.
+
+En este momento tu flujo de trabajo deberá estar funcionando:
+
+```text
+MODIFICAS ARCHIVOS
+en IntelliJ IDEA
+        ↓
+     COMMIT
+        ↓
+Repositorio Git local
+        ↓
+      PUSH
+        ↓
+Repositorio remoto
+     en GitHub
+```
+
+Utilizarás este mismo flujo durante el resto de la práctica.
+
+---
+
+## 8. Prepara los archivos para el análisis y diseño
+
+Regresa a **IntelliJ IDEA**.
+
+Dentro de tu proyecto crea la carpeta:
+
+```text
+docs/
+```
+
+Dentro de ella crea:
+
+```text
+01-analisis-diseno.md
+```
+
+Crea también, si todavía no existe:
+
+```text
+README.md
+```
+
+Tu proyecto deberá tener una estructura semejante a:
 
 ```text
 sistema-invernadero-java/
@@ -146,38 +409,71 @@ docs/01-analisis-diseno.md
 
 será tu documento de trabajo durante toda la práctica.
 
-Crea también una clase principal mínima que permita comprobar que el proyecto funciona.
+En él registrarás progresivamente:
 
-Por ejemplo:
+- análisis del problema;
+- identificación de objetos;
+- responsabilidades;
+- relaciones;
+- decisiones de diseño;
+- reflexiones solicitadas durante las diferentes fases.
 
-```java
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Sistema de invernadero inteligente");
-    }
-}
-```
-
-Realiza `commit` y `push`.
-
-### Commit obligatorio
+Realiza ahora un nuevo `commit`:
 
 ```text
-Inicializa proyecto y documento de análisis
+Crea documento inicial de análisis y diseño
 ```
+
+y posteriormente realiza:
+
+```text
+push
+```
+
+Comprueba en GitHub que los nuevos archivos estén publicados.
 
 ---
 
-## 2. Descripción del problema
+# Inicio del análisis
 
-Lee `Contexto_Invernadero_Inteligente.md`.
+A partir de este punto comenzarás el trabajo de análisis orientado a objetos.
 
-Después explica con tus propias palabras en `01-analisis-diseno.md`:
+> **Todavía no debes implementar las clases definitivas del sistema.**
 
-- qué sistema vas a representar;
-- qué información necesita manejar;
-- qué elementos intervienen;
-- qué operaciones generales deberá realizar.
+---
+
+## 9. Comprende el problema
+
+Lee primero:
+
+```text
+Contexto_Invernadero_Inteligente.md
+```
+
+Este documento contiene la información necesaria para comprender el sistema que utilizarás durante la práctica.
+
+No necesitas investigar por tu cuenta cómo funcionan físicamente los sensores ni adquirir conocimientos de agricultura, electrónica o automatización.
+
+Después de leerlo, abre:
+
+```text
+docs/01-analisis-diseno.md
+```
+
+y crea el encabezado:
+
+```markdown
+# Análisis y diseño
+
+## 1. Descripción del problema
+```
+
+Explica con tus propias palabras:
+
+- ¿qué sistema vas a representar?;
+- ¿qué información necesita manejar?;
+- ¿qué elementos intervienen?;
+- ¿qué operaciones generales deberá realizar?
 
 No copies únicamente el documento de contexto.
 
@@ -185,11 +481,17 @@ La intención es demostrar que **comprendiste el problema antes de comenzar a di
 
 ---
 
-## 3. Identificación de objetos
+## 10. Identifica los objetos
+
+Agrega a tu documento:
+
+```markdown
+## 2. Identificación de objetos
+```
 
 Responde:
 
-> ¿Qué elementos del problema pueden representarse mediante objetos?
+> ¿Qué elementos del problema podrían representarse mediante objetos?
 
 Para cada objeto propuesto explica:
 
@@ -197,9 +499,19 @@ Para cada objeto propuesto explica:
 - por qué consideras que debe existir como objeto;
 - qué responsabilidad tendría dentro del sistema.
 
+En este momento **no necesitas decidir todavía los nombres exactos de las clases, atributos y métodos**.
+
+Primero identifica los elementos del problema y sus responsabilidades.
+
 ---
 
-## 4. Estado y comportamiento
+## 11. Identifica estado y comportamiento
+
+Agrega:
+
+```markdown
+## 3. Estado y comportamiento
+```
 
 Completa una tabla como la siguiente:
 
@@ -208,9 +520,7 @@ Completa una tabla como la siguiente:
 | ... | ... | ... | ... |
 | ... | ... | ... | ... |
 
-### Importante
-
-En este momento piensa en términos de **responsabilidades**, no todavía en nombres exactos de atributos y métodos.
+En este momento piensa en términos de **responsabilidades y comportamientos**, no todavía en instrucciones Java.
 
 Por ejemplo, en lugar de escribir:
 
@@ -224,11 +534,17 @@ es preferible escribir:
 El sensor debe permitir conocer su última medición.
 ```
 
-La traducción de estas responsabilidades a atributos y métodos se realizará posteriormente.
+Más adelante transformarás estas responsabilidades en atributos y métodos.
 
 ---
 
-## 5. Características comunes y especialización
+## 12. Busca características comunes y especializaciones
+
+Agrega:
+
+```markdown
+## 4. Características comunes y especialización
+```
 
 Compara los diferentes sensores descritos en el documento de contexto.
 
@@ -240,19 +556,27 @@ Responde:
 4. ¿Existe un concepto general que permita representar a todos los sensores?
 5. ¿Qué elementos podrían representar especializaciones de ese concepto?
 
+El objetivo de este análisis es comenzar a identificar posibles relaciones de **generalización y especialización**.
+
 ---
 
-## 6. Relaciones entre objetos
+## 13. Analiza las relaciones entre los objetos
 
-Analiza las relaciones existentes.
+Agrega:
 
-Distingue especialmente entre:
+```markdown
+## 5. Relaciones entre objetos
+```
+
+Analiza ahora cómo se relacionan los diferentes elementos del sistema.
+
+Distingue especialmente entre una relación:
 
 ```text
 ES UN
 ```
 
-y
+y una relación:
 
 ```text
 TIENE / UTILIZA UN
@@ -264,17 +588,18 @@ Por ejemplo:
 Un sensor de temperatura ES UN sensor.
 ```
 
-Esto podría indicar una relación de generalización/especialización.
+Esto puede indicar una relación de generalización y especialización.
 
 En cambio:
 
 ```text
-Un sistema utiliza información de sensores.
+Un sistema utiliza información proporcionada
+por sensores.
 ```
 
-no significa necesariamente que ambos objetos deban pertenecer a la misma jerarquía.
+no significa necesariamente que ambos elementos deban pertenecer a la misma jerarquía.
 
-Explica:
+Para las relaciones que identifiques explica:
 
 - qué objetos necesitan colaborar;
 - qué información necesita un objeto de otro;
@@ -282,11 +607,25 @@ Explica:
 - cuáles no deberían representarse mediante herencia;
 - qué responsabilidades no deberían duplicarse.
 
-Responde también:
+Finalmente responde:
 
-> ¿Por qué `SistemaRiego` no debería ser una subclase de `Sensor`?
+> **¿Por qué `SistemaRiego` no debería ser una subclase de `Sensor`?**
 
-### Commits sugeridos
+Justifica tu respuesta a partir de las responsabilidades de ambos elementos.
+
+---
+
+## 14. Registra tu avance en GitHub
+
+Antes de terminar la fase, revisa los cambios realizados en:
+
+```text
+docs/01-analisis-diseno.md
+```
+
+Realiza commits que permitan observar cómo avanzó tu análisis.
+
+Puedes utilizar, por ejemplo:
 
 ```text
 Documenta análisis inicial del problema
@@ -300,19 +639,51 @@ Identifica objetos y responsabilidades del sistema
 Documenta relaciones y posibles especializaciones
 ```
 
-### Evidencia de la fase 1
+Después realiza:
 
-Al finalizar esta fase tu repositorio deberá contener:
+```text
+push
+```
+
+para enviar tus commits a GitHub.
+
+No es obligatorio realizar un commit por cada pregunta respondida. Lo importante es que el historial permita reconocer **avances significativos de tu trabajo**.
+
+---
+
+# Evidencia de la Fase 1
+
+Al finalizar esta fase, entra a tu repositorio en **GitHub desde el navegador**.
+
+Deberás poder comprobar que se encuentran publicados:
 
 - proyecto Java funcional;
 - `README.md`;
+- carpeta `docs`;
 - `docs/01-analisis-diseno.md`;
 - descripción del problema;
 - identificación de objetos;
 - tabla de estado y comportamiento;
-- análisis de características comunes;
-- análisis de relaciones;
-- commits correspondientes al análisis.
+- análisis de características comunes y especializaciones;
+- análisis de relaciones entre objetos;
+- respuesta sobre la relación entre sensores y sistema de riego;
+- historial de commits correspondiente al trabajo realizado.
+
+También deberás poder observar que el repositorio muestra un proceso semejante a:
+
+```text
+Inicializa proyecto Java
+        ↓
+Crea documento inicial de análisis y diseño
+        ↓
+Documenta análisis inicial del problema
+        ↓
+Identifica objetos y responsabilidades del sistema
+        ↓
+Documenta relaciones y posibles especializaciones
+```
+
+> **Recuerda:** un archivo que existe solamente en tu computadora no forma parte todavía de la evidencia disponible en GitHub. Para publicarlo deberás incluirlo en un `commit` y posteriormente realizar `push`.
 
 ---
 
